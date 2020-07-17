@@ -41,21 +41,53 @@ console.log("Total number of wood is :",Result);
 
 // Number 03 problem : brickCalculator
 
-function brickCalculator(){
+function brickCalculator(floorNum) {
 
+    var heightSum = 0;
+    var brickSum = 0;
+
+  for(var i = 1; i <= floorNum; i++) {
+
+    if(i <= 10) {
+
+      heightSum = heightSum + 15;
+    }
+
+    if(i > 10 && i <= 20) {
+
+      heightSum = heightSum + 12;
+    }
+
+    if(i > 20) {
+
+      heightSum = heightSum + 10;
+
+    }
+
+  }
+
+  brickSum = heightSum * 1000;
+  return brickSum;
 }
+
+console.log(brickCalculator(32));
+
+
+
+// Problem 03 solved!-----------------------------------
+
 
 
 // Number 04 problem : Finding tiny friend's name
 
-var friends = ['A','Tolu', 'Ab','Samia','Malia', 'Polin','Lamia'];
+var friends = ['Tolu','Samia','Malia','Polina','Lamia'];
 
 function tinyFriend(friends){
     var tinyName = friends[0];
 
     for(var i = 0; i <friends.length; i++){
         var currentName = friends[i];
-       if (currentName < tinyName){
+       if (currentName.length < tinyName.length){
            tinyName = currentName;
        }
 
